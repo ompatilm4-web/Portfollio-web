@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Om Patil — Data Analyst &amp; Backend Developer</title>
+<meta name="description" content="Portfolio of Om Patil — Data Analyst and Backend Developer building EDA pipelines, SQL data models, and Flask/FastAPI applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<div class="scanlines" aria-hidden="true"></div>
+
+<!-- ============ NAV : EDITOR TAB BAR ============ -->
+<header class="tabbar" id="tabbar">
+  <div class="tabbar__inner">
+    <div class="tabbar__brand">
+      <span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span>
+      <span class="brand__path">om@portfolio:~$</span>
+    </div>
+    <nav class="tabbar__tabs" aria-label="Primary">
+      <a href="#about" class="tab" data-tab="about">about.py</a>
+      <a href="#projects" class="tab" data-tab="projects">projects.sql</a>
+      <a href="#skills" class="tab" data-tab="skills">requirements.txt</a>
+      <a href="#experience" class="tab" data-tab="experience">activity.log</a>
+      <a href="#contact" class="tab" data-tab="contact">contact.sh</a>
+    </nav>
+    <a class="tabbar__resume" href="https://github.com/ompatilm4-web" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ============ HERO : QUERY CONSOLE ============ -->
+  <section class="hero" id="hero">
+    <div class="hero__grid">
+      <div class="console" role="img" aria-label="Terminal showing a query for Om Patil's profile and its result set">
+        <div class="console__titlebar">
+          <span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span>
+          <span class="console__title">query_editor — om_patil.sql</span>
+        </div>
+        <div class="console__body">
+          <div class="console__line">
+            <span class="console__prompt">1</span>
+            <span class="console__code"><span class="tok-kw">SELECT</span> name, role, base, focus
+<span class="tok-kw">FROM</span> engineers
+<span class="tok-kw">WHERE</span> role <span class="tok-kw">IN</span> (<span class="tok-str">'Data Analyst'</span>, <span class="tok-str">'Backend Developer'</span>)
+  <span class="tok-kw">AND</span> location = <span class="tok-str">'Mumbai, India'</span>;</span>
+          </div>
+          <div class="console__caret" id="typeCaret">
+            <span class="type-text" id="typeText"></span><span class="caret">▌</span>
+          </div>
+          <div class="console__result" id="consoleResult" aria-hidden="true">
+            <div class="result__meta">→ 1 row returned <span class="result__ms">in 42ms</span></div>
+            <table class="result__table">
+              <thead>
+                <tr><th>name</th><th>role</th><th>base</th><th>focus</th></tr>
+              </thead>
+              <tbody>
+                <tr class="reveal-row" style="--d:0">
+                  <td>Om Patil</td>
+                  <td>Data Analyst / Backend Dev</td>
+                  <td>Mumbai, IN</td>
+                  <td>EDA · SQL · Flask</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__side">
+        <p class="eyebrow">// B.Tech Computer Engineering, 2024–2028</p>
+        <h1 class="hero__title">I turn messy datasets<br>and half-built ideas<br>into things that <span class="hl">run</span>.</h1>
+        <p class="hero__lede">Data Analyst focused on EDA, feature engineering and business reporting — with a Flask/FastAPI backend habit that keeps every insight shippable, not just notebook-bound.</p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">Run projects.sql →</a>
+          <a href="#contact" class="btn btn--ghost">contact.sh</a>
+        </div>
+        <ul class="hero__stats">
+          <li><span class="stat__num">8</span><span class="stat__label">shipped projects</span></li>
+          <li><span class="stat__num">~229K</span><span class="stat__label">rows analyzed</span></li>
+          <li><span class="stat__num">10</span><span class="stat__label">relational tables (OTT-EDA)</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT : DOCSTRING BLOCK + PROFILE ============ -->
+  <section class="section" id="about">
+    <div class="section__inner">
+      <p class="section__eyebrow">01 · about.py</p>
+
+      <div class="about-grid">
+        <div class="profile-card">
+          <div class="profile-card__frame">
+            <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Om Patil" class="profile-card__img" onerror="this.parentElement.classList.add('is-empty')">
+            <span class="profile-card__placeholder">add<br>profile.jpg</span>
+          </div>
+          <p class="profile-card__name">Om Patil</p>
+          <p class="profile-card__role">Data Analyst · Backend Developer</p>
+          <p class="profile-card__loc">📍 Mumbai, Maharashtra, IN</p>
+        </div>
+
+        <div class="doc-block">
+          <pre class="doc-block__code"><span class="tok-com">"""</span>
+<span class="tok-com">Om Patil</span>
+<span class="tok-com">B.Tech Electronics &amp; Computer Engineering (2024–2028)</span>
+<span class="tok-com">Pillai HOC College of Engineering &amp; Technology, Khalapur, Maharashtra · CGPA 7.5/10</span>
+
+<span class="tok-com">Builds end-to-end data analysis projects — cleaning, EDA, feature</span>
+<span class="tok-com">engineering and business reporting in Python/Pandas/Seaborn — then</span>
+<span class="tok-com">wraps the useful ones in a Flask or FastAPI app so they're not just</span>
+<span class="tok-com">notebooks. Currently looking for a remote Data Analyst internship</span>
+<span class="tok-com">to bring that project experience to a real product and a real team.</span>
+<span class="tok-com">"""</span>
+
+<span class="tok-kw">class</span> <span class="tok-fn">OmPatil</span>:
+    role      = [<span class="tok-str">"Data Analyst"</span>, <span class="tok-str">"Backend Developer"</span>]
+    location  = <span class="tok-str">"Mumbai, Maharashtra, IN"</span>
+    stack     = [<span class="tok-str">"Python"</span>, <span class="tok-str">"SQL"</span>, <span class="tok-str">"Pandas"</span>, <span class="tok-str">"Flask"</span>, <span class="tok-str">"PostgreSQL"</span>]
+    currently = <span class="tok-str">"shipping Website Monitor + BillFlow, hunting hackathons"</span></pre>
+        </div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-card__row">
+          <div class="edu-card__degree">
+            <p class="edu-card__title">B.Tech, Electronics &amp; Computer Engineering</p>
+            <p class="edu-card__school">Pillai HOC College of Engineering &amp; Technology · Khalapur, Maharashtra</p>
+          </div>
+          <div class="edu-card__meta">
+            <span class="edu-card__pill">2024 – 2028</span>
+            <span class="edu-card__pill edu-card__pill--accent">CGPA 7.5 / 10</span>
+          </div>
+        </div>
+        <p class="edu-card__coursework">Relevant coursework: Python Programming · Database Management · Mathematics for ML · Statistics &amp; Probability</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECTS ============ -->
+  <section class="section section--alt" id="projects">
+    <div class="section__inner">
+      <p class="section__eyebrow">02 · projects.sql</p>
+      <h2 class="section__title">Query the work</h2>
+
+      <h3 class="group-title"><span class="group-title__tag">data</span> Data Analysis</h3>
+      <div class="card-grid">
+
+        <article class="card">
+          <div class="card__head">
+            <span class="card__index">01</span>
+            <h4 class="card__title">Zomato Market Intelligence — India</h4>
+          </div>
+          <p class="card__stat"><span class="card__stat-num">40.82</span> Revenue Score — Bangalore, India's top market</p>
+          <p class="card__desc">End-to-end analysis of 6,513 restaurants across 20+ cities. Engineered a 0–100 Revenue Score from a weighted min-max normalization of votes (50%), rating (30%) and cost for two (20%) to rank performance without transaction data.</p>
+          <ul class="card__facts">
+            <li>Faridabad, Ghaziabad &amp; Noida flagged as underserved NCR markets, scoring 3× lower</li>
+            <li>High performers are 45.6% more likely to offer online delivery, 5× more likely to take table bookings</li>
+          </ul>
+          <div class="card__tags"><span>Python</span><span>Pandas</span><span>Feature Engineering</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Zomato-Market-Intelligence-India" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="card__index">02</span>
+            <h4 class="card__title">E-Commerce Sales EDA</h4>
+          </div>
+          <p class="card__stat"><span class="card__stat-num">17,379</span> orders across 20 features</p>
+          <p class="card__desc">Uncovered revenue drivers, payment behaviour and shipping patterns on an Indian e-commerce dataset.</p>
+          <ul class="card__facts">
+            <li>Laptops rank as the #1 revenue category; Standard-segment customers are the most valuable</li>
+            <li>Credit Card is the top payment method; Chennai &amp; Pune carry the highest shipping costs</li>
+            <li>Unit Price, Subtotal and Discount Amount are the strongest predictors of net revenue</li>
+          </ul>
+          <div class="card__tags"><span>Python</span><span>Seaborn</span><span>Correlation Analysis</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/E-commerce_EDA" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="card__index">03</span>
+            <h4 class="card__title">Banking Loan Dataset EDA</h4>
+          </div>
+          <p class="card__stat"><span class="card__stat-num">537%</span> borrowing gap, high-value vs low-value</p>
+          <p class="card__desc">Customer segmentation and profitability analysis to separate high-value from low-value borrowers.</p>
+          <ul class="card__facts">
+            <li>High-value customers borrow $71,115 on average vs $11,160 — driven by loan size and term, not income</li>
+            <li>Risk scores stay near-uniform (3.94–4.01) across employment segments</li>
+            <li>Employed customers are the top interest contributors, followed by self-employed</li>
+          </ul>
+          <div class="card__tags"><span>Python</span><span>Segmentation</span><span>Risk Analysis</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Banking_Loan_Dataset" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="card__index">04</span>
+            <h4 class="card__title">Google Play Store EDA</h4>
+          </div>
+          <p class="card__stat"><span class="card__stat-num">RF</span> feature importance + cyclic encoding</p>
+          <p class="card__desc">Feature selection via Random Forest importance scores, cyclic encoding for time-based columns, and a business report on app-store trends.</p>
+          <div class="card__tags"><span>Python</span><span>Feature Selection</span><span>Random Forest</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Google-Playstore-EDA" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card">
+          <div class="card__head">
+            <span class="card__index">05</span>
+            <h4 class="card__title">OTT-EDA — Relational Media Warehouse</h4>
+          </div>
+          <p class="card__stat"><span class="card__stat-num">204,920</span> rows across 10 tables</p>
+          <p class="card__desc">A 10-table relational database combining Netflix, IMDB and Spotify data, loaded into SQLite and queried with 10 business-driven SQL questions.</p>
+          <div class="card__tags"><span>SQL</span><span>SQLite</span><span>Data Modeling</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/OTT-EDA" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+      </div>
+
+      <h3 class="group-title"><span class="group-title__tag">backend</span> Backend Engineering</h3>
+      <div class="card-grid">
+
+        <article class="card card--backend">
+          <div class="card__head">
+            <span class="card__index">06</span>
+            <h4 class="card__title">BillFlow — Billing Application</h4>
+          </div>
+          <p class="card__desc">A Flask + Supabase billing system with authentication, an invoice dashboard, and a Create Invoice flow with live GST/discount calculation and print-to-PDF export.</p>
+          <div class="card__tags"><span>Flask</span><span>Supabase</span><span>PostgreSQL</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Billing_System" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card card--backend">
+          <div class="card__head">
+            <span class="card__index">07</span>
+            <h4 class="card__title">Saarthi AI</h4>
+          </div>
+          <p class="card__desc">A multilingual assistant for Indian government services, built on FastAPI with AWS Bedrock (Nova Pro/Lite), Supabase and Edge TTS — tuned for sub-1-second first-word latency over SSE streaming.</p>
+          <div class="card__tags"><span>FastAPI</span><span>AWS Bedrock</span><span>SSE Streaming</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Saarthi-AI-Prototype-" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+        <article class="card card--backend">
+          <div class="card__head">
+            <span class="card__index">08</span>
+            <h4 class="card__title">Website Monitor</h4>
+          </div>
+          <p class="card__desc">A Flask app that tracks site uptime with a dark-themed dashboard, live status badges, and an environment-variable-driven config for clean deploys.</p>
+          <div class="card__tags"><span>Flask</span><span>SQLite</span><span>Dashboarding</span></div>
+          <a class="card__link" href="https://github.com/ompatilm4-web/Website_Monitor" target="_blank" rel="noopener">View repo ↗</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SKILLS : requirements.txt ============ -->
+  <section class="section" id="skills">
+    <div class="section__inner">
+      <p class="section__eyebrow">03 · requirements.txt</p>
+      <h2 class="section__title">Installed dependencies</h2>
+      <div class="req-grid">
+
+        <div class="req-block">
+          <p class="req-block__title"># languages</p>
+          <ul class="req-list">
+            <li><span>python</span><span class="req-bar"><span style="--w:92%"></span></span></li>
+            <li><span>sql</span><span class="req-bar"><span style="--w:85%"></span></span></li>
+            <li><span>c</span><span class="req-bar"><span style="--w:60%"></span></span></li>
+          </ul>
+        </div>
+
+        <div class="req-block">
+          <p class="req-block__title"># data-analysis</p>
+          <ul class="req-list">
+            <li><span>pandas</span><span class="req-bar"><span style="--w:90%"></span></span></li>
+            <li><span>numpy</span><span class="req-bar"><span style="--w:80%"></span></span></li>
+            <li><span>matplotlib / seaborn</span><span class="req-bar"><span style="--w:85%"></span></span></li>
+            <li><span>eda / feature-engineering</span><span class="req-bar"><span style="--w:90%"></span></span></li>
+          </ul>
+        </div>
+
+        <div class="req-block">
+          <p class="req-block__title"># backend</p>
+          <ul class="req-list">
+            <li><span>flask</span><span class="req-bar"><span style="--w:82%"></span></span></li>
+            <li><span>fastapi</span><span class="req-bar"><span style="--w:65%"></span></span></li>
+            <li><span>supabase</span><span class="req-bar"><span style="--w:70%"></span></span></li>
+          </ul>
+        </div>
+
+        <div class="req-block">
+          <p class="req-block__title"># databases &amp; tools</p>
+          <ul class="req-list">
+            <li><span>mysql / postgresql</span><span class="req-bar"><span style="--w:75%"></span></span></li>
+            <li><span>git / github</span><span class="req-bar"><span style="--w:85%"></span></span></li>
+            <li><span>jupyter / vs code / linux</span><span class="req-bar"><span style="--w:88%"></span></span></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ EXPERIENCE / LOG ============ -->
+  <section class="section section--alt" id="experience">
+    <div class="section__inner">
+      <p class="section__eyebrow">04 · activity.log</p>
+      <h2 class="section__title">Recent activity</h2>
+      <div class="log">
+        <div class="log__row"><span class="log__tag log__tag--ok">CERT</span><span class="log__text">Complete Data Science, Machine Learning, Deep Learning &amp; NLP — Udemy</span></div>
+        <div class="log__row"><span class="log__tag log__tag--info">EVENT</span><span class="log__text">Built an ML-based solution at the AI for Bharat hackathon</span></div>
+        <div class="log__row"><span class="log__tag log__tag--info">EVENT</span><span class="log__text">Built an ML-based solution at the Tech Aspiria hackathon</span></div>
+        <div class="log__row"><span class="log__tag log__tag--warn">WIP</span><span class="log__text">Preparing Website Monitor for deployment — evaluating Render/Railway over serverless SQLite limits</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT : POST REQUEST BUILDER ============ -->
+  <section class="section" id="contact">
+    <div class="section__inner section__inner--narrow">
+      <p class="section__eyebrow">05 · contact.sh</p>
+      <h2 class="section__title">Send a request</h2>
+      <p class="section__sub">This form actually POSTs to a small Flask endpoint — <code>/api/contact</code> — no third-party form service involved.</p>
+
+      <form class="request-card" id="contactForm" novalidate>
+        <div class="request-card__bar">POST /api/contact HTTP/1.1</div>
+        <div class="request-card__body">
+          <label class="field">
+            <span class="field__label">name</span>
+            <input class="field__input" type="text" name="name" id="name" autocomplete="name" required>
+            <span class="field__error" id="err-name"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">email</span>
+            <input class="field__input" type="email" name="email" id="email" autocomplete="email" required>
+            <span class="field__error" id="err-email"></span>
+          </label>
+          <label class="field">
+            <span class="field__label">message</span>
+            <textarea class="field__input field__input--area" name="message" id="message" rows="5" required></textarea>
+            <span class="field__error" id="err-message"></span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--full" id="submitBtn">
+            <span id="submitLabel">Send request →</span>
+          </button>
+          <div class="response-panel" id="responsePanel" hidden>
+            <div class="response-panel__status" id="responseStatus"></div>
+            <pre class="response-panel__body" id="responseBody"></pre>
+          </div>
+        </div>
+      </form>
+
+      <div class="contact-direct">
+        <a href="mailto:ompatilm4@gmail.com">ompatilm4@gmail.com</a>
+        <span aria-hidden="true">·</span>
+        <a href="tel:+919588624391">+91 95886 24391</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://linkedin.com/in/ompatil" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <span aria-hidden="true">·</span>
+        <a href="https://github.com/ompatilm4-web" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>// built with Flask, vanilla JS, and too much coffee — Om Patil, {{ current_year }}</p>
+</footer>
+
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
