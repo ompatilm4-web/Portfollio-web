@@ -64,11 +64,7 @@ def contact():
         "received_at": datetime.now(timezone.utc).isoformat(),
     }
 
-    # NOTE: this writes to a local JSON file, which works for local runs
-    # and traditional hosts (Render/Railway) with a persistent disk.
-    # On serverless platforms (e.g. Vercel) the filesystem is ephemeral,
-    # so swap this out for a database (Supabase/Postgres) or an email
-    # service (SMTP / Resend / Formspree) before deploying there.
+    
     try:
         _save_submission(entry)
     except OSError:
